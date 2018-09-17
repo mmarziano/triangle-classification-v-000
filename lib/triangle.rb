@@ -19,9 +19,6 @@ class Triangle
     @a == @c && @a != @b || @b == @c && @b != @a || @a == @b && @a != @c 
   end 
   
-  def valid?
-    @a > 0 && @b > 0 && @c > 0 
-  end 
   
   def legal?
     @a > 0 && @b > 0 && @c > 0 
