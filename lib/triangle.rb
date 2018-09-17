@@ -29,18 +29,15 @@ class Triangle
   end 
   
   def kind 
-    if equilateral? && legal? && legal2?
-      return :equilateral 
-    elsif 
-      scalene? && legal? && legal2?
-        return :scalene
-    elsif 
-      isosceles? && legal? && legal2?
-      return :isosceles 
-    else 
-      legal? == false || legal2? == false 
+    if @a == 0 && @b == 0 && @c == 0 || @a <= 0 || @b <= 0 || @c <= 0 || @c >= @a + @b ||
+      @a >= @b + @c || @b >= @c + @a 
       raise TriangleError
-
+    elsif @a == @b && @b == @c
+      return :equilateral 
+    elsif @a == @b || @a == @c || @b == @c && @a != @b
+      return :isosceles
+    else 
+      return :scalene
     end 
   end
   
