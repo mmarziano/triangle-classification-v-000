@@ -38,7 +38,8 @@ class Triangle
       isosceles? && legal? && legal2?
       return :isosceles 
     else 
-      return TriangleError
+      legal? == false || legal2? == false 
+      raise TriangleError
 
     end 
   end
